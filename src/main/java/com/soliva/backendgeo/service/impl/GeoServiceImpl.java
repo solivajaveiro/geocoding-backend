@@ -72,7 +72,7 @@ public class GeoServiceImpl implements GeoService {
         Long lng2 = results.getGeometry().getViewport().getSouthwest().getLng();
 
         if ((lat1.equals(lat2)) && (lng1.equals(lng2))) {
-            throw new RuntimeException("same location!");
+            throw new RuntimeException("Mesmo local!");
         } else {
             double theta = lng1 - lng2;
             double dist = Math.sin(Math.toRadians(lat1)) * Math.sin(Math.toRadians(lat2)) + Math.cos(Math.toRadians(lat1)) * Math.cos(Math.toRadians(lat2)) * Math.cos(Math.toRadians(theta));
